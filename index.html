@@ -81,34 +81,25 @@ steam_client.login('MY_USERNAME', 'MY_PASSWORD', 'PATH_TO_STEAMGUARD_FILE')
 
 <p>If not specified in documentation, method does not require login to work(it uses API Key from constructor instead)</p>
 
-<h2>
-<a id="loginusername-str-password-str-steam_guard-str---requestsresponse" class="anchor" href="#loginusername-str-password-str-steam_guard-str---requestsresponse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>login(username: str, password: str, steam_guard: str) -&gt; requests.Response</h2>
+<p><strong>login(username: str, password: str, steam_guard: str) -&gt; requests.Response</strong></p>
 
-<h2>
-<a id="api_callrequest_method-str-interface-str-api_method-str-version-str-params-dict--none---requestsresponse" class="anchor" href="#api_callrequest_method-str-interface-str-api_method-str-version-str-params-dict--none---requestsresponse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>api_call(request_method: str, interface: str, api_method: str, version: str, params: dict = None) -&gt; requests.Response</h2>
+<p><strong>api_call(request_method: str, interface: str, api_method: str, version: str, params: dict = None) -&gt; requests.Response</strong></p>
 
-<h2>
-<a id="get_trade_offers_summary---dict" class="anchor" href="#get_trade_offers_summary---dict" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>get_trade_offers_summary() -&gt; dict</h2>
+<p><strong>get_trade_offers_summary() -&gt; dict</strong></p>
 
-<h2>
-<a id="get_trade_offers---dict" class="anchor" href="#get_trade_offers---dict" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>get_trade_offers() -&gt; dict</h2>
+<p><strong>get_trade_offers() -&gt; dict</strong></p>
 
-<h2>
-<a id="get_trade_offertrade_offer_id-str---dict" class="anchor" href="#get_trade_offertrade_offer_id-str---dict" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>get_trade_offer(trade_offer_id: str) -&gt; dict</h2>
+<p><strong>get_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
 
-<h2>
-<a id="accept_trade_offertrade_offer_id-str---dict" class="anchor" href="#accept_trade_offertrade_offer_id-str---dict" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>accept_trade_offer(trade_offer_id: str) -&gt; dict</h2>
+<p><strong>accept_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
 
 <p>using <code>SteamClient.login</code> method is required before usage</p>
 
-<h2>
-<a id="decline_trade_offertrade_offer_id-str---dict" class="anchor" href="#decline_trade_offertrade_offer_id-str---dict" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>decline_trade_offer(trade_offer_id: str) -&gt; dict</h2>
+<p><strong>decline_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
 
-<h2>
-<a id="cancel_trade_offertrade_offer_id-str---dict" class="anchor" href="#cancel_trade_offertrade_offer_id-str---dict" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>cancel_trade_offer(trade_offer_id: str) -&gt; dict</h2>
+<p><strong>cancel_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
 
-<h2>
-<a id="get_priceitem_hash_name-str-game-gameoptions-currency-str--currencyusd---dict" class="anchor" href="#get_priceitem_hash_name-str-game-gameoptions-currency-str--currencyusd---dict" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>get_price(item_hash_name: str, game: GameOptions, currency: str = Currency.USD) -&gt; dict</h2>
+<p><strong>get_price(item_hash_name: str, game: GameOptions, currency: str = Currency.USD) -&gt; dict</strong></p>
 
 <p>Probably can be used without logging into Steam</p>
 
