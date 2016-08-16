@@ -1,44 +1,26 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Steampy : A Steam trading library for python 3">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Steampy</title>
+    <meta charset="UTF-8">
+    <title>Steampy by bukson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Steampy</h1>
+      <h2 class="project-tagline">A Steam trading library for python 3</h2>
+      <a href="https://github.com/bukson/steampy" class="btn">View on GitHub</a>
+      <a href="https://github.com/bukson/steampy/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/bukson/steampy/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/bukson/steampy">View on GitHub</a>
-
-          <h1 id="project_title">Steampy</h1>
-          <h2 id="project_tagline">A Steam trading library for python 3</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/bukson/steampy/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/bukson/steampy/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="steam-trade-offers-client-for-python" class="anchor" href="#steam-trade-offers-client-for-python" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steam Trade Offers Client for Python</h1>
-
-<h2>
-<a id="warning-this-library-is-not-for-usage-yet-version-01-is-for-testing-purpouses-on-github" class="anchor" href="#warning-this-library-is-not-for-usage-yet-version-01-is-for-testing-purpouses-on-github" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WARNING THIS LIBRARY IS NOT FOR USAGE YET, VERSION 0.1* IS FOR TESTING PURPOUSES ON GITHUB</h2>
-
-<h2>
-<a id="with-realease-02-it-will-be-tested-and-stable-cloning-now-may-cause-conflicts-in-git-later-" class="anchor" href="#with-realease-02-it-will-be-tested-and-stable-cloning-now-may-cause-conflicts-in-git-later-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WITH REALEASE 0.2 IT WILL BE TESTED, AND STABLE, CLONING NOW MAY CAUSE CONFLICTS IN GIT LATER </h2>
 
 <p><code>steampy</code> is a library for Python, inspired by node-steam-tradeoffers, node-steam and others libraries for Node.js.
 It was designed as a simple lightweight library, combining features of many steam libraries from Node.js in one python module.
@@ -49,7 +31,8 @@ and SteamGuard file(no need to extract and pass sessionID and webCookie).
 <h1>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h1>
 
-<p>TODO add to pip</p>
+<pre><code>pip install steampy
+</code></pre>
 
 <h1>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
@@ -67,14 +50,14 @@ steam_client.login('MY_USERNAME', 'MY_PASSWORD', 'PATH_TO_STEAMGUARD_FILE')
 </code></pre>
 
 <h1>
-<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h1>
-
-<p>TODO</p>
-
-<h1>
 <a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h1>
 
-<p>TODO</p>
+<p>You'll need to install obtain your API key and SteamGuard file in order to run the examples, 
+ant then fill login and password in <code>storehose.py</code> file.
+The <code>storehouse.py</code> file contains an example of handling incoming trade offers.</p>
+
+<pre><code>python storehouse.py
+</code></pre>
 
 <h1>
 <a id="methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods</h1>
@@ -83,25 +66,57 @@ steam_client.login('MY_USERNAME', 'MY_PASSWORD', 'PATH_TO_STEAMGUARD_FILE')
 
 <p><strong>login(username: str, password: str, steam_guard: str) -&gt; requests.Response</strong></p>
 
+<p>Log in to steam account. Allows to accept trade offers and some other methods.</p>
+
+<pre><code>from steampy.client import SteamClient
+
+steam_client = SteamClient('MY_API_KEY')
+steam_client.login('MY_USERNAME', 'MY_PASSWORD', 'PATH_TO_STEAMGUARD_FILE')
+</code></pre>
+
 <p><strong>api_call(request_method: str, interface: str, api_method: str, version: str, params: dict = None) -&gt; requests.Response</strong></p>
+
+<p>Directly call api method from steam api services</p>
+
+<p><a href="https://developer.valvesoftware.com/wiki/Steam_Web_API">Official steam api site</a></p>
+
+<p><a href="https://lab.xpaw.me/steam_api_documentation.html">Unofficial but more elegant</a></p>
+
+<pre><code>from steampy.client import SteamClient
+
+steam_client = SteamClient('MY_API_KEY')
+params = {'key': self._api_key}
+summaries =  steam_client.api_call('GET', 'IEconService', 'GetTradeOffersSummary', 'v1', params).json()
+</code></pre>
 
 <p><strong>get_trade_offers_summary() -&gt; dict</strong></p>
 
 <p><strong>get_trade_offers() -&gt; dict</strong></p>
 
+<p>Fetch trade offers from steam using an API call.
+Method is fetching offers with descriptions that satisfy conditions:
+    * Are sent by us or others
+    * Are active (means no historical, does not mean having offer state active!)
+    * Are not historical
+    * No time limitation</p>
+
 <p><strong>get_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
 
 <p><strong>accept_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
 
-<p>using <code>SteamClient.login</code> method is required before usage</p>
+<p>Using <code>SteamClient.login</code> method is required before usage
+This method also use identity secret from SteamGuard file to confirm trade offer.
+No need to manually confirm it on mobile app or email.</p>
 
 <p><strong>decline_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
 
+<p>Decline trade offer that <strong>other</strong> user sent to us.</p>
+
 <p><strong>cancel_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
 
-<p><strong>get_price(item_hash_name: str, game: GameOptions, currency: str = Currency.USD) -&gt; dict</strong></p>
+<p>Cancel trade offer that <strong>we</strong> sent to other user.</p>
 
-<p>Probably can be used without logging into Steam</p>
+<p><strong>get_price(item_hash_name: str, game: GameOptions, currency: str = Currency.USD) -&gt; dict</strong></p>
 
 <p>Games are defined in GameOptions class, currently <code>GameOptions.DOTA2</code> and <code>GameOptions.CS</code></p>
 
@@ -109,10 +124,31 @@ steam_client.login('MY_USERNAME', 'MY_PASSWORD', 'PATH_TO_STEAMGUARD_FILE')
 
 <p>Default currency is USD</p>
 
+<pre><code>client = SteamClient(self.credentials.api_key)
+item = 'M4A1-S | Cyrex (Factory New)'
+client.fetch_price(item, game=GameOptions.CS)
+{'volume': '208', 'lowest_price': '$11.30 USD', 'median_price': '$11.33 USD', 'success': True}
+</code></pre>
+
+<p><strong>get_my_inventory(self, game: GameOptions) -&gt; dict</strong></p>
+
+<p>Using <code>SteamClient.login</code> method is required before usage</p>
+
 <h1>
 <a id="test" class="anchor" href="#test" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test</h1>
 
-<p>TODO</p>
+<p>All public methods are documented and tested. 
+<code>guard</code> module has unit tests, <code>client</code> uses acceptance test.
+For acceptance test you have to put <code>credentials.pwd</code> and <code>Steamguard</code> file into <code>test</code> directory.</p>
+
+<p>Example <code>credentials.pwd</code> file:</p>
+
+<pre><code>account1 password1 api_key1
+account2 password2 api_key2
+</code></pre>
+
+<p>In some test you also have to obtain <code>transaction_id</code>.
+You can do it by <code>SteamClient.get_trade_offers</code> or by logging manually into steam account in browser and get it from url</p>
 
 <h1>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
@@ -138,18 +174,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Steampy maintained by <a href="https://github.com/bukson">bukson</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/bukson/steampy">Steampy</a> is maintained by <a href="https://github.com/bukson">bukson</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
