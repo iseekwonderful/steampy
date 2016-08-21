@@ -1,32 +1,59 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Steampy by bukson</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Steampy</h1>
-      <h2 class="project-tagline">A Steam trading library for python 3</h2>
-      <a href="https://github.com/bukson/steampy" class="btn">View on GitHub</a>
-      <a href="https://github.com/bukson/steampy/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/bukson/steampy/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<html>
 
-    <section class="main-content">
-      <h1>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Steampy : A Steam trading library for python 3">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Steampy</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/bukson/steampy">View on GitHub</a>
+
+          <h1 id="project_title">Steampy</h1>
+          <h2 id="project_tagline">A Steam trading library for python 3</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/bukson/steampy/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/bukson/steampy/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
 <a id="steam-trade-offers-client-for-python" class="anchor" href="#steam-trade-offers-client-for-python" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steam Trade Offers Client for Python</h1>
 
-<p><code>steampy</code> is a library for Python, inspired by node-steam-tradeoffers, node-steam and others libraries for Node.js.
-It was designed as a simple lightweight library, combining features of many steam libraries from Node.js in one python module.
-<code>steampy</code> is capable of logging to steam, fetching trade offers and handle them in simple manner, using steam user credentials
+<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=XC8BMJ8QRD9ZY" title="Donate to this project via PayPal"><img src="https://img.shields.io/badge/donate-paypal-orange.svg" alt="PayPal Donate Button"></a></p>
+
+<p><code>steampy</code> is a library for Python, inspired by node-steam-tradeoffers, node-steam and other libraries for Node.js.
+It was designed as a simple lightweight library, combining features of many steam libraries from Node.js into a single python module.
+<code>steampy</code> is capable of logging into steam, fetching trade offers and handling them in simple manner, using steam user credentials
 and SteamGuard file(no need to extract and pass sessionID and webCookie).
 <code>steampy</code> is developed with Python 3 using type hints and many other features.</p>
+
+<h1>
+<a id="table-of-content" class="anchor" href="#table-of-content" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Content</h1>
+
+<ul>
+<li><p><a href="https://github.com/bukson/steampy#installation">Installation</a></p></li>
+<li><p><a href="https://github.com/bukson/steampy#usage">Usage</a></p></li>
+<li><p><a href="https://github.com/bukson/steampy#examples">Examples</a></p></li>
+<li><p><a href="https://github.com/bukson/steampy#steamclient-methods">SteamClient methods</a></p></li>
+<li><p><a href="https://github.com/bukson/steampy#guard-module-functions">Guard module functions</a></p></li>
+<li><p><a href="https://github.com/bukson/steampy#test">Test</a></p></li>
+<li><p><a href="https://github.com/bukson/steampy#license">License</a></p></li>
+</ul>
 
 <h1>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h1>
@@ -43,57 +70,54 @@ and SteamGuard file(no need to extract and pass sessionID and webCookie).
 
 <p><a href="https://github.com/codepath/android_guides/wiki/Genymotion-2.0-Emulators-with-Google-Play-support">Obtaining SteamGuard using Android emulation</a></p>
 
-<pre><code>from steampy.client import SteamClient
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> steampy.client <span class="pl-k">import</span> SteamClient
 
-steam_client = SteamClient('MY_API_KEY')
-steam_client.login('MY_USERNAME', 'MY_PASSWORD', 'PATH_TO_STEAMGUARD_FILE')
-</code></pre>
+steam_client <span class="pl-k">=</span> SteamClient(<span class="pl-s"><span class="pl-pds">'</span>MY_API_KEY<span class="pl-pds">'</span></span>)
+steam_client.login(<span class="pl-s"><span class="pl-pds">'</span>MY_USERNAME<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>MY_PASSWORD<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>PATH_TO_STEAMGUARD_FILE<span class="pl-pds">'</span></span>)</pre></div>
 
 <h1>
 <a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h1>
 
-<p>You'll need to install obtain your API key and SteamGuard file in order to run the examples, 
-ant then fill login and password in <code>storehose.py</code> file.
+<p>You'll need to obtain your API key and SteamGuard file in order to run the examples, 
+and then fill login and password in <code>storehose.py</code> file.
 The <code>storehouse.py</code> file contains an example of handling incoming trade offers.</p>
 
 <pre><code>python storehouse.py
 </code></pre>
 
 <h1>
-<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods</h1>
+<a id="steamclient-methods" class="anchor" href="#steamclient-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SteamClient methods</h1>
 
-<p>If not specified in documentation, method does not require login to work(it uses API Key from constructor instead)</p>
+<p>Unless specified in documentation, the method does not require login to work(it uses API Key from constructor instead)</p>
 
 <p><strong>login(username: str, password: str, steam_guard: str) -&gt; requests.Response</strong></p>
 
-<p>Log in to steam account. Allows to accept trade offers and some other methods.</p>
+<p>Log into the steam account. Allows to accept trade offers and some other methods.</p>
 
-<pre><code>from steampy.client import SteamClient
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> steampy.client <span class="pl-k">import</span> SteamClient
 
-steam_client = SteamClient('MY_API_KEY')
-steam_client.login('MY_USERNAME', 'MY_PASSWORD', 'PATH_TO_STEAMGUARD_FILE')
-</code></pre>
+steam_client <span class="pl-k">=</span> SteamClient(<span class="pl-s"><span class="pl-pds">'</span>MY_API_KEY<span class="pl-pds">'</span></span>)
+steam_client.login(<span class="pl-s"><span class="pl-pds">'</span>MY_USERNAME<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>MY_PASSWORD<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>PATH_TO_STEAMGUARD_FILE<span class="pl-pds">'</span></span>)</pre></div>
 
 <p><strong>api_call(request_method: str, interface: str, api_method: str, version: str, params: dict = None) -&gt; requests.Response</strong></p>
 
-<p>Directly call api method from steam api services</p>
+<p>Directly call api method from the steam api services.</p>
 
 <p><a href="https://developer.valvesoftware.com/wiki/Steam_Web_API">Official steam api site</a></p>
 
 <p><a href="https://lab.xpaw.me/steam_api_documentation.html">Unofficial but more elegant</a></p>
 
-<pre><code>from steampy.client import SteamClient
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> steampy.client <span class="pl-k">import</span> SteamClient
 
-steam_client = SteamClient('MY_API_KEY')
-params = {'key': self._api_key}
-summaries =  steam_client.api_call('GET', 'IEconService', 'GetTradeOffersSummary', 'v1', params).json()
-</code></pre>
+steam_client <span class="pl-k">=</span> SteamClient(<span class="pl-s"><span class="pl-pds">'</span>MY_API_KEY<span class="pl-pds">'</span></span>)
+params <span class="pl-k">=</span> {<span class="pl-s"><span class="pl-pds">'</span>key<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>MY_API_KEY<span class="pl-pds">'</span></span>}
+summaries <span class="pl-k">=</span>  steam_client.api_call(<span class="pl-s"><span class="pl-pds">'</span>GET<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>IEconService<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>GetTradeOffersSummary<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>v1<span class="pl-pds">'</span></span>, params).json()</pre></div>
 
 <p><strong>get_trade_offers_summary() -&gt; dict</strong></p>
 
 <p><strong>get_trade_offers() -&gt; dict</strong></p>
 
-<p>Fetch trade offers from steam using an API call.
+<p>Fetching trade offers from steam using an API call.
 Method is fetching offers with descriptions that satisfy conditions:
     * Are sent by us or others
     * Are active (means no historical, does not mean having offer state active!)
@@ -102,10 +126,32 @@ Method is fetching offers with descriptions that satisfy conditions:
 
 <p><strong>get_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
 
+<p><strong>make_offer(items_from_me: List[Asset], items_from_them: List[Asset], partner_steam_id: str, message:str ='') -&gt; dict</strong></p>
+
+<p>Using <code>SteamClient.login</code> method is required before usage
+<code>Asset</code> is class defined in <code>client.py</code>, you can obtain <code>asset_id</code> from <code>SteamClient.get_my_inventory</code> method.
+This method also uses identity secret from SteamGuard file to confirm the trade offer.
+No need to manually confirm it on mobile app or email.</p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> steampy.client <span class="pl-k">import</span> SteamClient, Asset
+<span class="pl-k">from</span> steampy.utils <span class="pl-k">import</span> GameOptions
+
+steam_client <span class="pl-k">=</span> SteamClient(<span class="pl-s"><span class="pl-pds">'</span>MY_API_KEY<span class="pl-pds">'</span></span>)
+steam_client.login(<span class="pl-s"><span class="pl-pds">'</span>MY_USERNAME<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>MY_PASSWORD<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>PATH_TO_STEAMGUARD_FILE<span class="pl-pds">'</span></span>)
+partner_id <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>PARTNER_ID<span class="pl-pds">'</span></span>
+game <span class="pl-k">=</span> GameOptions.<span class="pl-c1">CS</span>
+my_items <span class="pl-k">=</span> client.get_my_inventory(game)
+partner_items <span class="pl-k">=</span> client.get_partner_inventory(partner_id, game)
+my_first_item <span class="pl-k">=</span> <span class="pl-c1">next</span>(<span class="pl-c1">iter</span>(my_items.values()))
+partner_first_item <span class="pl-k">=</span> <span class="pl-c1">next</span>(<span class="pl-c1">iter</span>(partner_items.values()))
+my_asset <span class="pl-k">=</span> Asset(my_first_item[<span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span>], game)
+partner_asset <span class="pl-k">=</span> Asset(partner_first_item[<span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span>], game)
+client.make_offer([my_asset], [partner_asset], partner_id, <span class="pl-s"><span class="pl-pds">'</span>Test offer<span class="pl-pds">'</span></span>)</pre></div>
+
 <p><strong>accept_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
 
 <p>Using <code>SteamClient.login</code> method is required before usage
-This method also use identity secret from SteamGuard file to confirm trade offer.
+This method also uses identity secret from SteamGuard file to confirm the trade offer.
 No need to manually confirm it on mobile app or email.</p>
 
 <p><strong>decline_trade_offer(trade_offer_id: str) -&gt; dict</strong></p>
@@ -124,22 +170,158 @@ No need to manually confirm it on mobile app or email.</p>
 
 <p>Default currency is USD</p>
 
-<pre><code>client = SteamClient(self.credentials.api_key)
-item = 'M4A1-S | Cyrex (Factory New)'
-client.fetch_price(item, game=GameOptions.CS)
-{'volume': '208', 'lowest_price': '$11.30 USD', 'median_price': '$11.33 USD', 'success': True}
-</code></pre>
+<div class="highlight highlight-source-python"><pre>client <span class="pl-k">=</span> SteamClient(<span class="pl-v">self</span>.credentials.api_key)
+item <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>M4A1-S | Cyrex (Factory New)<span class="pl-pds">'</span></span>
+client.fetch_price(item, <span class="pl-v">game</span><span class="pl-k">=</span>GameOptions.<span class="pl-c1">CS</span>)
+{<span class="pl-s"><span class="pl-pds">'</span>volume<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>208<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>lowest_price<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>$11.30 USD<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>median_price<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>$11.33 USD<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>success<span class="pl-pds">'</span></span>: <span class="pl-c1">True</span>}</pre></div>
 
-<p><strong>get_my_inventory(self, game: GameOptions) -&gt; dict</strong></p>
+<p><strong>get_my_inventory(game: GameOptions, merge: bool = True) -&gt; dict</strong></p>
 
 <p>Using <code>SteamClient.login</code> method is required before usage</p>
+
+<p>If <code>merege</code> is set <code>True</code> then inventory items are merged from items data and items description into dict where items <code>id</code> is key
+and descriptions merged with data are value.</p>
+
+<p>Inventory entries looks like this:</p>
+
+<div class="highlight highlight-source-python"><pre>{<span class="pl-s"><span class="pl-pds">'</span>7146788981<span class="pl-pds">'</span></span>: {<span class="pl-s"><span class="pl-pds">'</span>actions<span class="pl-pds">'</span></span>: [{<span class="pl-s"><span class="pl-pds">'</span>link<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S<span class="pl-c1">%o</span>wner_steamid%A<span class="pl-c1">%a</span>ssetid%D316070896107169653<span class="pl-pds">'</span></span>,
+                             <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Inspect in Game...<span class="pl-pds">'</span></span>}],
+                <span class="pl-s"><span class="pl-pds">'</span>amount<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>1<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>appid<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>730<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>background_color<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>classid<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>1304827205<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>commodity<span class="pl-pds">'</span></span>: <span class="pl-c1">0</span>,
+                <span class="pl-s"><span class="pl-pds">'</span>contextid<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>2<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>descriptions<span class="pl-pds">'</span></span>: [{<span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>html<span class="pl-pds">'</span></span>,
+                                  <span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Exterior: Field-Tested<span class="pl-pds">'</span></span>},
+                                 {<span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>html<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>},
+                                 {<span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>html<span class="pl-pds">'</span></span>,
+                                  <span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Powerful and reliable, the AK-47 <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>is one of the most popular assault <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>rifles in the world. It is most <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>deadly in short, controlled bursts <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>of fire. It has been painted using <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>a carbon fiber hydrographic and a <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>dry-transfer decal of a red <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>pinstripe.<span class="pl-cce">\n</span><span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\n</span><span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>&lt;i&gt;Never be afraid to push it to <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>the limit&lt;/i&gt;<span class="pl-pds">'</span></span>},
+                                 {<span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>html<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>},
+                                 {<span class="pl-s"><span class="pl-pds">'</span>app_data<span class="pl-pds">'</span></span>: {<span class="pl-s"><span class="pl-pds">'</span>def_index<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>65535<span class="pl-pds">'</span></span>,
+                                               <span class="pl-s"><span class="pl-pds">'</span>is_itemset_name<span class="pl-pds">'</span></span>: <span class="pl-c1">1</span>},
+                                  <span class="pl-s"><span class="pl-pds">'</span>color<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>9da1a9<span class="pl-pds">'</span></span>,
+                                  <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>html<span class="pl-pds">'</span></span>,
+                                  <span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>The Phoenix Collection<span class="pl-pds">'</span></span>},
+                                 {<span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>html<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>},
+                                 {<span class="pl-s"><span class="pl-pds">'</span>app_data<span class="pl-pds">'</span></span>: {<span class="pl-s"><span class="pl-pds">'</span>def_index<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>65535<span class="pl-pds">'</span></span>},
+                                  <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>html<span class="pl-pds">'</span></span>,
+                                  <span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;&lt;div id="sticker_info" <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>name="sticker_info" title="Sticker <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>Details" style="border: 2px solid <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>rgb(102, 102, 102); border-radius: <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>6px; width=100; margin:4px; <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>padding:8px;"&gt;&lt;center&gt;&lt;img <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>width=64 height=48 <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>src="https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/eslkatowice2015/pentasports.a6b0ddffefb5507453456c0d2c35b6a57821c171.png"&gt;&lt;img <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>width=64 height=48 <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>src="https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/eslkatowice2015/pentasports.a6b0ddffefb5507453456c0d2c35b6a57821c171.png"&gt;&lt;img <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>width=64 height=48 <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>src="https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/eslkatowice2015/pentasports.a6b0ddffefb5507453456c0d2c35b6a57821c171.png"&gt;&lt;img <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>width=64 height=48 <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>src="https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/cologne2015/mousesports.3e75da497d9f75fa56f463c22db25f29992561ce.png"&gt;&lt;br&gt;Sticker: <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>PENTA Sports  | Katowice 2015, <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>PENTA Sports  | Katowice 2015, <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>PENTA Sports  | Katowice 2015, <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>mousesports | Cologne <span class="pl-pds">'</span></span>
+                                           <span class="pl-s"><span class="pl-pds">'</span>2015&lt;/center&gt;&lt;/div&gt;<span class="pl-pds">'</span></span>}],
+                <span class="pl-s"><span class="pl-pds">'</span>icon_drag_url<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>icon_url<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV09-5lpKKqPrxN7LEmyVQ7MEpiLuSrYmnjQO3-UdsZGHyd4_Bd1RvNQ7T_FDrw-_ng5Pu75iY1zI97bhLsvQz<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>icon_url_large<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV09-5lpKKqPrxN7LEm1Rd6dd2j6eQ9N2t2wK3-ENsZ23wcIKRdQE2NwyD_FK_kLq9gJDu7p_KyyRr7nNw-z-DyIFJbNUz<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>7146788981<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>instanceid<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>480085569<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>market_actions<span class="pl-pds">'</span></span>: [{<span class="pl-s"><span class="pl-pds">'</span>link<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20M<span class="pl-c1">%li</span>stingid%A<span class="pl-c1">%a</span>ssetid%D316070896107169653<span class="pl-pds">'</span></span>,
+                                    <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Inspect in Game...<span class="pl-pds">'</span></span>}],
+                <span class="pl-s"><span class="pl-pds">'</span>market_hash_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>AK-47 | Redline (Field-Tested)<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>market_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>AK-47 | Redline (Field-Tested)<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>market_tradable_restriction<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>7<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>marketable<span class="pl-pds">'</span></span>: <span class="pl-c1">1</span>,
+                <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>AK-47 | Redline<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>name_color<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>D2D2D2<span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>owner_descriptions<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,
+                <span class="pl-s"><span class="pl-pds">'</span>tags<span class="pl-pds">'</span></span>: [{<span class="pl-s"><span class="pl-pds">'</span>category<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Type<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>category_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Type<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>internal_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>CSGO_Type_Rifle<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Rifle<span class="pl-pds">'</span></span>},
+                         {<span class="pl-s"><span class="pl-pds">'</span>category<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Weapon<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>category_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Weapon<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>internal_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>weapon_ak47<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>AK-47<span class="pl-pds">'</span></span>},
+                         {<span class="pl-s"><span class="pl-pds">'</span>category<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>ItemSet<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>category_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Collection<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>internal_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>set_community_2<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>The Phoenix Collection<span class="pl-pds">'</span></span>},
+                         {<span class="pl-s"><span class="pl-pds">'</span>category<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Quality<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>category_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Category<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>internal_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>normal<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Normal<span class="pl-pds">'</span></span>},
+                         {<span class="pl-s"><span class="pl-pds">'</span>category<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Rarity<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>category_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Quality<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>color<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>d32ce6<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>internal_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Rarity_Legendary_Weapon<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Classified<span class="pl-pds">'</span></span>},
+                         {<span class="pl-s"><span class="pl-pds">'</span>category<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Exterior<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>category_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Exterior<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>internal_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>WearCategory2<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Field-Tested<span class="pl-pds">'</span></span>},
+                         {<span class="pl-s"><span class="pl-pds">'</span>category<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Tournament<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>category_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Tournament<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>internal_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Tournament6<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>2015 ESL One Katowice<span class="pl-pds">'</span></span>},
+                         {<span class="pl-s"><span class="pl-pds">'</span>category<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Tournament<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>category_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Tournament<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>internal_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Tournament7<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>2015 ESL One Cologne<span class="pl-pds">'</span></span>},
+                         {<span class="pl-s"><span class="pl-pds">'</span>category<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>TournamentTeam<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>category_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Team<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>internal_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Team39<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>PENTA Sports<span class="pl-pds">'</span></span>},
+                         {<span class="pl-s"><span class="pl-pds">'</span>category<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>TournamentTeam<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>category_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Team<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>internal_name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Team29<span class="pl-pds">'</span></span>,
+                          <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>mousesports<span class="pl-pds">'</span></span>}],
+                <span class="pl-s"><span class="pl-pds">'</span>tradable<span class="pl-pds">'</span></span>: <span class="pl-c1">1</span>,
+                <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Classified Rifle<span class="pl-pds">'</span></span>}}</pre></div>
+
+<p><strong>get_partner_inventory(partner_steam_id: str, game: GameOptions, merge: bool = True) -&gt; dict</strong></p>
+
+<p>Using <code>SteamClient.login</code> method is required before usage</p>
+
+<p>Inventory items can be merged like in <code>SteamClient.get_my_inventory</code> method</p>
+
+<h1>
+<a id="guard-module-functions" class="anchor" href="#guard-module-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>guard module functions</h1>
+
+<p><strong>load_steam_guard(steam_guard: str) -&gt; dict</strong></p>
+
+<p>Load and parse SteamGuard file</p>
+
+<p><strong>generate_one_time_code(shared_secret: str, timestamp: int= int(time.time())) -&gt; str</strong></p>
+
+<p>Generate one time code for logging into Steam using shared_secret from SteamGuard file.
+Default timestamp is current time.</p>
+
+<p><strong>generate_confirmation_key(identity_secret: str, tag: str, timestamp: int = int(time.time())) -&gt; bytes</strong></p>
+
+<p>Generate mobile device confirmation key for accepting trade offer. 
+Default timestamp is current time.</p>
 
 <h1>
 <a id="test" class="anchor" href="#test" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test</h1>
 
 <p>All public methods are documented and tested. 
-<code>guard</code> module has unit tests, <code>client</code> uses acceptance test.
-For acceptance test you have to put <code>credentials.pwd</code> and <code>Steamguard</code> file into <code>test</code> directory.</p>
+<code>guard</code> module has unit tests, <code>client</code> uses an acceptance test.
+For the acceptance test you have to put <code>credentials.pwd</code> and <code>Steamguard</code> file into <code>test</code> directory</p>
 
 <p>Example <code>credentials.pwd</code> file:</p>
 
@@ -147,8 +329,11 @@ For acceptance test you have to put <code>credentials.pwd</code> and <code>Steam
 account2 password2 api_key2
 </code></pre>
 
-<p>In some test you also have to obtain <code>transaction_id</code>.
+<p>In some tests you also have to obtain <code>transaction_id</code>.
 You can do it by <code>SteamClient.get_trade_offers</code> or by logging manually into steam account in browser and get it from url</p>
+
+<p>In some tests you also have to obtain partner steam id.
+You can do it by by logging manually into steam account in browser and get it from url</p>
 
 <h1>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
@@ -174,15 +359,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</p>
+      </section>
+    </div>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/bukson/steampy">Steampy</a> is maintained by <a href="https://github.com/bukson">bukson</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Steampy maintained by <a href="https://github.com/bukson">bukson</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
+    </div>
 
-    </section>
+    
 
-  
   </body>
 </html>
