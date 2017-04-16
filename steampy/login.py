@@ -81,14 +81,14 @@ class LoginExecutor:
 
     def _enter_steam_guard_if_necessary(self, login_response: requests.Response) -> requests.Response:
         if login_response.json()['requires_twofactor']:
-            self.one_time_code = guard.generate_one_time_code(self.shared_secret)
+            self.one_time_code = guard.generate_one_time_code(self.shared_secret, int(time.time()))
             return self._send_login_request()
         return login_response
 
     @staticmethod
     def _assert_valid_credentials(login_response: requests.Response) -> None:
         if not login_response.json()['success']:
-            raise InvalidCredentials(login_response.json()['message'])
+            raise InvalidCredentials(login_response.json())
 
     def _perform_redirects(self, response_dict: dict) -> None:
         parameters = response_dict.get('transfer_parameters')
